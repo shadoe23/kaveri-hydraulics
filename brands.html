@@ -219,10 +219,13 @@
       color: var(--text-light);
     }
 
+    .brand-gallery-wrap { padding: 0 2.5rem 1.5rem; }
+
     @media (max-width: 640px) {
       .brand-section__body { padding: 1.5rem; }
       .brand-section__header { padding: 1.5rem; }
       .brand-cta { padding: 1.25rem 1.5rem; flex-direction: column; align-items: flex-start; }
+      .brand-gallery-wrap { padding: 0 1.5rem 1.5rem; }
     }
   </style>
 </head>
@@ -336,7 +339,7 @@
           </div>
 
         </div>
-        <div style="padding:0 2.5rem 1.5rem">
+        <div class="brand-gallery-wrap">
           <p class="section__label">Product Gallery</p>
           <p style="font-size:.9rem;color:var(--text-light);margin-bottom:1rem">Our LEAKOLOCK seal kit inventory — click any image to enlarge.</p>
           <div class="gallery-grid" id="leakolockGallery"></div>
@@ -449,7 +452,7 @@
           </div>
 
         </div>
-        <div style="padding:0 2.5rem 1.5rem">
+        <div class="brand-gallery-wrap">
           <p class="section__label">Product Gallery</p>
           <p style="font-size:.9rem;color:var(--text-light);margin-bottom:1rem">HANDOK hydraulic pump and motor parts in stock — click any image to enlarge.</p>
           <div class="gallery-grid" id="handokGallery"></div>
@@ -633,6 +636,10 @@
       if (e.key === 'ArrowLeft')  stepLB(-1);
       if (e.key === 'ArrowRight') stepLB(1);
     });
+    // Touch swipe
+    let _tx = 0;
+    lb.addEventListener('touchstart', e => { _tx = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend',   e => { if (Math.abs(e.changedTouches[0].clientX - _tx) > 40) stepLB(e.changedTouches[0].clientX < _tx ? 1 : -1); }, { passive: true });
 
     // ── Gallery builder ──
     function makeGrid(gridId, imgs) {

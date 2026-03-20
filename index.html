@@ -680,6 +680,10 @@
       if (e.key === 'ArrowLeft')   stepLB(-1);
       if (e.key === 'ArrowRight')  stepLB(1);
     });
+    // Touch swipe
+    let _tx = 0;
+    lb.addEventListener('touchstart', e => { _tx = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend',   e => { if (Math.abs(e.changedTouches[0].clientX - _tx) > 40) stepLB(e.changedTouches[0].clientX < _tx ? 1 : -1); }, { passive: true });
 
     // ── Build gallery grids ──
     function makeGrid(containerId, imgs, itemClass) {

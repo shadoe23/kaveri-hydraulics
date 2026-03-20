@@ -175,6 +175,11 @@
       .products__grid { grid-template-columns: 1fr; }
       .products__cta-banner { flex-direction: column; align-items: flex-start; }
     }
+
+    @media (max-width: 480px) {
+      .tab-btn { font-size: .78rem; padding: .5rem .75rem; }
+      .tab-btn span { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -680,6 +685,10 @@
       if (e.key === 'ArrowLeft')  stepLB(-1);
       if (e.key === 'ArrowRight') stepLB(1);
     });
+    // Touch swipe
+    let _tx = 0;
+    lb.addEventListener('touchstart', e => { _tx = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend',   e => { if (Math.abs(e.changedTouches[0].clientX - _tx) > 40) stepLB(e.changedTouches[0].clientX < _tx ? 1 : -1); }, { passive: true });
 
     // ── Gallery builder ──
     function makeGrid(gridId, imgs) {
