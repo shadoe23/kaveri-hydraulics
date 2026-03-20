@@ -336,7 +336,7 @@
           </div>
 
         </div>
-        <div style="padding:0 0 1.5rem">
+        <div style="padding:0 2.5rem 1.5rem">
           <p class="section__label">Product Gallery</p>
           <p style="font-size:.9rem;color:var(--text-light);margin-bottom:1rem">Our LEAKOLOCK seal kit inventory — click any image to enlarge.</p>
           <div class="gallery-grid" id="leakolockGallery"></div>
@@ -449,7 +449,7 @@
           </div>
 
         </div>
-        <div style="padding:0 0 1.5rem">
+        <div style="padding:0 2.5rem 1.5rem">
           <p class="section__label">Product Gallery</p>
           <p style="font-size:.9rem;color:var(--text-light);margin-bottom:1rem">HANDOK hydraulic pump and motor parts in stock — click any image to enlarge.</p>
           <div class="gallery-grid" id="handokGallery"></div>
@@ -655,9 +655,9 @@
     );
     makeGrid('leakolockGallery', leakolockImgs);
 
-    // HANDOK product gallery — o-ring & pump parts (31 images)
-    const handokImgs = Array.from({length: 31}, (_, i) =>
-      'images/product%2002/oring-pump-parts-' + String(i + 1).padStart(2, '0') + '.webp'
+    // HANDOK product gallery — pump parts only (images 13–31, skipping o-ring kit trays)
+    const handokImgs = Array.from({length: 19}, (_, i) =>
+      'images/product%2002/oring-pump-parts-' + String(i + 13).padStart(2, '0') + '.webp'
     );
     makeGrid('handokGallery', handokImgs);
 
