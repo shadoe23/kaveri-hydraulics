@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brands | Kaveri Hydraulics</title>
+  <meta name="description" content="Kaveri Hydraulics stocks top brands including LEAKOLOCK, GMG, HANDOK and SAKURA for excavator spare parts." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Brands page styles ── */
+    .page-hero {
+      background: var(--navy);
+      background-image:
+        radial-gradient(ellipse 70% 50% at 70% -10%, rgba(232,119,34,.18) 0%, transparent 65%);
+      color: var(--white);
+      padding: 64px 0 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .page-hero .container { position: relative; z-index: 1; }
+    .page-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--orange-light);
+      margin-bottom: .9rem;
+    }
+    .page-hero__eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--orange);
+      border-radius: 2px;
+    }
+    .page-hero__title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: .9rem;
+    }
+    .page-hero__title span { color: var(--orange); }
+    .page-hero__sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,.68);
+      max-width: 520px;
+    }
+
+    /* Brand nav pills */
+    .brand-nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 68px;
+      z-index: 100;
+    }
+    .brand-nav .container {
+      display: flex;
+      gap: .25rem;
+      padding: .75rem 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .brand-nav .container::-webkit-scrollbar { display: none; }
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .45rem 1.1rem;
+      border-radius: 50px;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--text-light);
+      border: 1.5px solid var(--border);
+      background: var(--white);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all var(--tr);
+    }
+    .brand-pill:hover,
+    .brand-pill.active {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    /* Brand sections */
+    .brands-page { background: var(--off-white); }
+
+    .brand-section {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      margin-bottom: 2.5rem;
+      overflow: hidden;
+      scroll-margin-top: 130px;
+    }
+
+    /* Brand header banner */
+    .brand-section__header {
+      background: var(--navy);
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .brand-section__logo-box {
+      width: 60px;
+      height: 60px;
+      background: rgba(232,119,34,.15);
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: var(--orange);
+      flex-shrink: 0;
+    }
+    .brand-section__logo-box svg { width: 30px; height: 30px; }
+
+    .brand-section__header-text h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: .06em;
+      margin-bottom: .2rem;
+    }
+    .brand-section__header-text p {
+      font-size: .85rem;
+      color: rgba(255,255,255,.55);
+      font-weight: 500;
+    }
+
+    /* Brand body */
+    .brand-section__body {
+      padding: 2.5rem;
+    }
+
+    .brand-block {
+      margin-bottom: 2rem;
+    }
+    .brand-block:last-child { margin-bottom: 0; }
+
+    .brand-block__heading {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: .7rem;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+    }
+    .brand-block__heading::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 1.05em;
+      background: var(--orange);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .brand-block p {
+      font-size: .93rem;
+      color: var(--text-light);
+      line-height: 1.75;
+    }
+
+    .brand-block p + p { margin-top: .75rem; }
+
+    /* Tag list for compatible models */
+    .brand-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: .9rem;
+    }
+    .brand-tag {
+      padding: .3rem .8rem;
+      border-radius: 50px;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+
+    .brand-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* CTA row at bottom of each brand section */
+    .brand-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1.5rem 2.5rem;
+      background: var(--off-white);
+      border-top: 1px solid var(--border);
+    }
+    .brand-cta p {
+      font-size: .9rem;
+      color: var(--text-light);
+    }
+
+    @media (max-width: 640px) {
+      .brand-section__body { padding: 1.5rem; }
+      .brand-section__header { padding: 1.5rem; }
+      .brand-cta { padding: 1.25rem 1.5rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav__brand" aria-label="Kaveri Hydraulics home">
+        <svg class="nav__brand-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="4"  y="46" width="56" height="10" rx="5" fill="currentColor" opacity=".3"/>
+          <rect x="8"  y="48" width="48" height="6"  rx="3" fill="currentColor" opacity=".5"/>
+          <rect x="10" y="32" width="34" height="16" rx="3" fill="currentColor" opacity=".7"/>
+          <rect x="28" y="22" width="18" height="14" rx="2.5" fill="currentColor"/>
+          <line x1="14" y1="38" x2="38" y2="16" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+          <line x1="38" y1="16" x2="52" y2="26" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M52 26 L58 32 L54 38 L48 34 Z" fill="currentColor"/>
+        </svg>
+        <div class="nav__brand-text">
+          <span class="nav__brand-name">Kaveri Hydraulics</span>
+          <span class="nav__brand-tagline">Est. 1993 &middot; Bangalore</span>
+        </div>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="brands.html" class="active">Brands</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="brands.html" class="active">Brands</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-labelledby="brandsHeading">
+    <div class="container">
+      <p class="page-hero__eyebrow">Our Partners</p>
+      <h1 class="page-hero__title" id="brandsHeading">Brands We <span>Carry</span></h1>
+      <p class="page-hero__sub">We are authorised distributors for world-class brands trusted by contractors and fleet operators across India.</p>
+    </div>
+  </section>
+
+  <!-- BRAND NAV PILLS -->
+  <nav class="brand-nav" aria-label="Jump to brand">
+    <div class="container">
+      <a href="#leakolock" class="brand-pill">LEAKOLOCK</a>
+      <a href="#gmg"       class="brand-pill">GMG</a>
+      <a href="#handok"    class="brand-pill">HANDOK</a>
+      <a href="#sakura"    class="brand-pill">SAKURA</a>
+    </div>
+  </nav>
+
+
+  <!-- BRANDS CONTENT -->
+  <section class="section brands-page" aria-label="Brand details">
+    <div class="container">
+
+
+      <!-- ════════════════════ LEAKOLOCK ════════════════════ -->
+      <article class="brand-section" id="leakolock">
+        <div class="brand-section__header">
+          <div class="brand-section__logo-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="brand-section__header-text">
+            <h2>LEAKOLOCK</h2>
+            <p>Sealing Systems for Heavy Equipment</p>
+          </div>
+        </div>
+
+        <div class="brand-section__body">
+
+          <div class="brand-block">
+            <h3 class="brand-block__heading">Premier Products</h3>
+            <p>LEAKOLOCK Brand seal kits are the preferred after-market alternative to the original equipment manufacturer. As a premier provider of sealing systems for heavy equipment, LEAKOLOCK Brand seal kits support excavator parts distribution companies, and heavy equipment operators and resellers around the country.</p>
+            <p>LEAKOLOCK Brand seal kits are designed and manufactured for the critical and demanding hydraulic cylinder, transmission, pumps and motor applications found in heavy equipment.</p>
+          </div>
+
+          <hr class="brand-divider" />
+
+          <div class="brand-block">
+            <h3 class="brand-block__heading">Engineered Solutions</h3>
+            <p>With decades of experience, LEAKOLOCK knows exactly how to solve sealing problems. Standard and custom designs are quickly engineered using state-of-the-art measuring and inspection equipment partnered with computer aided design and drafting tools.</p>
+            <p>These design tools are combined with CNC-operated manufacturing equipment, giving LEAKOLOCK the capacity for high-volume production along with the flexibility to produce seals for prototype and low-volume applications.</p>
+          </div>
+
+          <hr class="brand-divider" />
+
+          <div class="brand-block">
+            <h3 class="brand-block__heading">Industry Leading Inventory</h3>
+            <p>LEAKOLOCK's facility in Bangalore was specifically designed to support the manufacturing and assembly of a wide range of cylinder seal kits and O-ring kits. With a 14,000&nbsp;ft&sup2; storage facility, several thousand products are actively stocked and immediately available.</p>
+            <p>With automated kit assembly and packaging technology, thousands more are available within only a few days. Whether from our catalogue of existing products or a custom tailored solution, LEAKOLOCK can provide a sealing system to fit your needs.</p>
+          </div>
+
+          <hr class="brand-divider" />
+
+          <div class="brand-block">
+            <h3 class="brand-block__heading">Commitment</h3>
+            <p>While many things have changed, LEAKOLOCK remains committed to the same long-standing goals — providing high quality products with unmatched customer service. LEAKOLOCK Brand products are now sold across the country.</p>
+            <p>After almost 25 years of operations, a focus on providing high-quality products has led many businesses around the world to demand the LEAKOLOCK Brand seal kits.</p>
+          </div>
+
+        </div>
+        <div style="padding:0 0 1.5rem">
+          <p class="section__label">Product Gallery</p>
+          <p style="font-size:.9rem;color:var(--text-light);margin-bottom:1rem">Our LEAKOLOCK seal kit inventory — click any image to enlarge.</p>
+          <div class="gallery-grid" id="leakolockGallery"></div>
+        </div>
+        <div class="brand-cta">
+          <p>Looking for LEAKOLOCK seal kits? Contact us for pricing and availability.</p>
+          <a href="contact.html" class="btn btn--primary">Enquire Now &rarr;</a>
+        </div>
+      </article>
+
+
+      <!-- ════════════════════ GMG ════════════════════ -->
+      <article class="brand-section" id="gmg">
+        <div class="brand-section__header">
+          <div class="brand-section__logo-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+          </div>
+          <div class="brand-section__header-text">
+            <h2>GMG</h2>
+            <p>Control Cables &amp; Motion Transfer Solutions</p>
+          </div>
+        </div>
+
+        <div class="brand-section__body">
+
+          <div class="brand-block">
+            <h3 class="brand-block__heading">Cables and Linkage Products</h3>
+            <p>GMG is a leader in solutions for motion transfer needs such as control cables, levers, ball joints and more. They provide a broad product range for most common control cable applications.</p>
+            <p>Their products serve a wide range of applications — from material handling equipment, construction and mining equipment, buses and trucks, to speedboats. OEM equivalent cables are available for:</p>
+            <div class="brand-tags">
+              <span class="brand-tag">Hitachi</span>
+              <span class="brand-tag">Volvo</span>
+              <span class="brand-tag">Caterpillar</span>
+              <span class="brand-tag">BEML</span>
+              <span class="brand-tag">Samsung</span>
+              <span class="brand-tag">Bomag</span>
+              <span class="brand-tag">Stetter</span>
+              <span class="brand-tag">CIFA</span>
+              <span class="brand-tag">JCB</span>
+              <span class="brand-tag">John Deere</span>
+              <span class="brand-tag">L&amp;T</span>
+              <span class="brand-tag">Komatsu</span>
+              <span class="brand-tag">Ingersoll Rand</span>
+              <span class="brand-tag">Eicher</span>
+              <span class="brand-tag">and more…</span>
+            </div>
+          </div>
+
+          <hr class="brand-divider" />
+
+          <div class="brand-block">
+            <h3 class="brand-block__heading">Customer First</h3>
+            <p>If you have a control cable application on any equipment, chances are GMG has it ready for you. Our customer-first approach gets us closer to you — you will get your motion control solutions where you want them, when you want them, and how you want them. All backed by our commitment: <em>service with a smile.</em></p>
+          </div>
+
+        </div>
+        <div class="brand-cta">
+          <p>Need a GMG control cable? We stock OEM-equivalent cables for most excavator brands.</p>
+          <a href="contact.html" class="btn btn--primary">Enquire Now &rarr;</a>
+        </div>
+      </article>
+
+
+      <!-- ════════════════════ HANDOK ════════════════════ -->
+      <article class="brand-section" id="handok">
+        <div class="brand-section__header">
+          <div class="brand-section__logo-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <div class="brand-section__header-text">
+            <h2>HANDOK</h2>
+            <p>Hydraulic Pumps &amp; Motor Components</p>
+          </div>
+        </div>
+
+        <div class="brand-section__body">
+
+          <div class="brand-block">
+            <h3 class="brand-block__heading">Hydraulic Excellence Since 1987</h3>
+            <p>HANDOK Hydraulic, since its foundation in 1987, has been providing high quality hydraulic pump and motor products based on constant research, development and technological innovation.</p>
+            <p>HANDOK Hydraulic Piston Pumps, Swing Pumps and Travel Pumps are offered here. Main products include:</p>
+            <div class="brand-tags">
+              <span class="brand-tag">Assembly Kits — K3V Series</span>
+              <span class="brand-tag">Assembly Kits — EX Series</span>
+              <span class="brand-tag">Assembly Kits — M2X Series</span>
+              <span class="brand-tag">Cylinder Block</span>
+              <span class="brand-tag">Valve Plate</span>
+              <span class="brand-tag">Piston Shoe</span>
+              <span class="brand-tag">Drive Shaft</span>
+            </div>
+          </div>
+
+          <hr class="brand-divider" />
+
+          <div class="brand-block">
+            <h3 class="brand-block__heading">Compatible Equipment</h3>
+            <p>HANDOK products are available for all major excavator brands:</p>
+            <div class="brand-tags">
+              <span class="brand-tag">Komatsu</span>
+              <span class="brand-tag">Kato</span>
+              <span class="brand-tag">Hitachi</span>
+              <span class="brand-tag">Caterpillar</span>
+              <span class="brand-tag">Sumitomo</span>
+              <span class="brand-tag">Kobelco</span>
+              <span class="brand-tag">Daewoo</span>
+              <span class="brand-tag">Doosan</span>
+              <span class="brand-tag">Samsung</span>
+              <span class="brand-tag">Hyundai</span>
+            </div>
+          </div>
+
+        </div>
+        <div style="padding:0 0 1.5rem">
+          <p class="section__label">Product Gallery</p>
+          <p style="font-size:.9rem;color:var(--text-light);margin-bottom:1rem">HANDOK hydraulic pump and motor parts in stock — click any image to enlarge.</p>
+          <div class="gallery-grid" id="handokGallery"></div>
+        </div>
+        <div class="brand-cta">
+          <p>Need pump assembly kits or spare parts for your hydraulic system?</p>
+          <a href="contact.html" class="btn btn--primary">Enquire Now &rarr;</a>
+        </div>
+      </article>
+
+
+      <!-- ════════════════════ SAKURA ════════════════════ -->
+      <article class="brand-section" id="sakura">
+        <div class="brand-section__header">
+          <div class="brand-section__logo-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a9.96 9.96 0 0 1 3.17 7.5 9.96 9.96 0 0 1-3.17 7.5 9.96 9.96 0 0 1-3.17-7.5A9.96 9.96 0 0 1 12 2z"/><path d="M2 12a9.96 9.96 0 0 1 7.5-3.17A9.96 9.96 0 0 1 17 12a9.96 9.96 0 0 1-7.5 3.17A9.96 9.96 0 0 1 2 12z"/></svg>
+          </div>
+          <div class="brand-section__header-text">
+            <h2>SAKURA</h2>
+            <p>Filtration &amp; Fluid Management</p>
+          </div>
+        </div>
+
+        <div class="brand-section__body">
+
+          <div class="brand-block">
+            <h3 class="brand-block__heading">Sakura Filters</h3>
+            <p>When it comes to filtration — filter out the rest and stay with the best.</p>
+            <p>Sakura Filters offer the widest range of quality filtration products available globally, supported by excellent service. Whether for hydraulic systems, engine oil or fuel, Sakura has a filter solution engineered to the precise standard required.</p>
+          </div>
+
+          <hr class="brand-divider" />
+
+          <div class="brand-block">
+            <h3 class="brand-block__heading">Sakura Oil Filters</h3>
+            <p>Sakura oil filters are made to the exact standard to reduce frictional wear by eliminating particles released from friction parts and combustion. This enhances the efficiency and life expectancy of the engine, protecting critical components from premature wear.</p>
+            <p>By maintaining clean oil throughout the system, Sakura filters help reduce maintenance costs and maximise uptime for your excavator fleet.</p>
+          </div>
+
+        </div>
+        <div class="brand-cta">
+          <p>Stock up on Sakura filters for your excavator maintenance programme.</p>
+          <a href="contact.html" class="btn btn--primary">Enquire Now &rarr;</a>
+        </div>
+      </article>
+
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="index.html" class="footer__brand" aria-label="Kaveri Hydraulics home">
+            <svg class="footer__brand-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4"  y="46" width="56" height="10" rx="5" fill="currentColor" opacity=".3"/>
+              <rect x="8"  y="48" width="48" height="6"  rx="3" fill="currentColor" opacity=".5"/>
+              <rect x="10" y="32" width="34" height="16" rx="3" fill="currentColor" opacity=".7"/>
+              <rect x="28" y="22" width="18" height="14" rx="2.5" fill="currentColor"/>
+              <line x1="14" y1="38" x2="38" y2="16" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+              <line x1="38" y1="16" x2="52" y2="26" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M52 26 L58 32 L54 38 L48 34 Z" fill="currentColor"/>
+            </svg>
+            <span class="footer__brand-name">Kaveri Hydraulics</span>
+          </a>
+          <p>Bangalore's trusted partner for excavator hydraulic spare parts since 1993. Quality products, expert advice, honest service.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Quick Links</p>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Contact Us</p>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Bangalore, Karnataka, India</span>
+          </div>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6 6l.85-.85a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.27 16l.65.92z"/></svg>
+            <a href="tel:+91XXXXXXXXXX" style="color:inherit">+91 XXXXX XXXXX</a>
+          </div>
+          <div class="footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" style="color:inherit">WhatsApp Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span id="year"></span> Kaveri Hydraulics, Bangalore. All rights reserved.</span>
+        <span>Excavator Hydraulic Spare Parts</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox__close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lightbox__nav lightbox__prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+    <img class="lightbox__img" id="lbImg" src="" alt="" />
+    <button class="lightbox__nav lightbox__next" id="lbNext" aria-label="Next">&#8250;</button>
+    <div class="lightbox__counter" id="lbCounter"></div>
+  </div>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/91XXXXXXXXXX" class="wa-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+    <div class="wa-float__pulse" aria-hidden="true"></div>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Hamburger
+    const hamburger  = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      mobileMenu.setAttribute('aria-hidden', !isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    }));
+    document.addEventListener('click', e => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    // ── Lightbox ──
+    const lb        = document.getElementById('lightbox');
+    const lbImg     = document.getElementById('lbImg');
+    const lbClose   = document.getElementById('lbClose');
+    const lbPrev    = document.getElementById('lbPrev');
+    const lbNext    = document.getElementById('lbNext');
+    const lbCounter = document.getElementById('lbCounter');
+    let lbItems = [], lbIdx = 0;
+
+    function openLB(items, idx) {
+      lbItems = items; lbIdx = idx;
+      lbImg.src = lbItems[lbIdx];
+      lbCounter.textContent = (lbIdx + 1) + ' / ' + lbItems.length;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLB() {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+    function stepLB(dir) {
+      lbIdx = (lbIdx + dir + lbItems.length) % lbItems.length;
+      lbImg.src = lbItems[lbIdx];
+      lbCounter.textContent = (lbIdx + 1) + ' / ' + lbItems.length;
+    }
+
+    lbClose.addEventListener('click', closeLB);
+    lb.addEventListener('click', e => { if (e.target === lb) closeLB(); });
+    lbPrev.addEventListener('click', () => stepLB(-1));
+    lbNext.addEventListener('click', () => stepLB(1));
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape')     closeLB();
+      if (e.key === 'ArrowLeft')  stepLB(-1);
+      if (e.key === 'ArrowRight') stepLB(1);
+    });
+
+    // ── Gallery builder ──
+    function makeGrid(gridId, imgs) {
+      const el = document.getElementById(gridId);
+      if (!el) return;
+      imgs.forEach((src, i) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'gallery-item';
+        const img = document.createElement('img');
+        img.src = src; img.alt = ''; img.loading = 'lazy';
+        wrap.appendChild(img);
+        wrap.addEventListener('click', () => openLB(imgs, i));
+        el.appendChild(wrap);
+      });
+    }
+
+    // LEAKOLOCK seal kit gallery (139 images)
+    const leakolockImgs = Array.from({length: 139}, (_, i) =>
+      'images/product%201/leakolock-seal-kit-' + String(i + 1).padStart(3, '0') + '.webp'
+    );
+    makeGrid('leakolockGallery', leakolockImgs);
+
+    // HANDOK product gallery — o-ring & pump parts (31 images)
+    const handokImgs = Array.from({length: 31}, (_, i) =>
+      'images/product%2002/oring-pump-parts-' + String(i + 1).padStart(2, '0') + '.webp'
+    );
+    makeGrid('handokGallery', handokImgs);
+
+    // Highlight active brand pill on scroll
+    const sections = document.querySelectorAll('.brand-section');
+    const pills    = document.querySelectorAll('.brand-pill');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          pills.forEach(p => p.classList.remove('active'));
+          const active = document.querySelector(`.brand-pill[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>
