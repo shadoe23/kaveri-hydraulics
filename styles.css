@@ -598,12 +598,6 @@ ul  { list-style: none; }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 
-.tab-panel__count {
-  font-size: .82rem;
-  color: var(--text-light);
-  margin-bottom: 1rem;
-}
-
 /* Product card thumbnail */
 .product-card__img {
   width: 100%;
