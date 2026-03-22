@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products | Kaveri Hydraulics</title>
-  <meta name="description" content="Browse our full range of excavator spare parts including seal kits, hydraulic parts, filters, cables and more." />
+  <title>Products | Kaveri Hydraulics — Excavator Hydraulic Spare Parts</title>
+  <meta name="description" content="Browse our full range of excavator spare parts: hydraulic seal kits, pump and motor parts, engine couplings, filters, bi-metal bushes, clutch plates, bucket teeth, undercarriage components, cables and more. Kaveri Hydraulics, Bangalore." />
+    <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kaveri Hydraulics" />
+  <meta property="og:title" content="Products | Kaveri Hydraulics — Excavator Hydraulic Spare Parts" />
+  <meta property="og:description" content="Browse our full range of excavator spare parts: hydraulic seal kits, pump and motor parts, engine couplings, filters, bi-metal bushes, clutch plates, bucket teeth, undercarriage components, cables and more. Kaveri Hydraulics, Bangalore." />
+  <meta property="og:image" content="images/logo.png" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* ── Products page styles ── */
     .page-hero {
       background: var(--navy);
       background-image:
-        radial-gradient(ellipse 70% 50% at 70% -10%, rgba(232,119,34,.18) 0%, transparent 65%);
+        radial-gradient(ellipse 70% 50% at 70% -10%, rgba(61,191,172,.18) 0%, transparent 65%);
       color: var(--white);
       padding: 64px 0 56px;
       position: relative;
@@ -34,7 +39,7 @@
       font-weight: 700;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: var(--orange-light);
+      color: var(--teal-light);
       margin-bottom: .9rem;
     }
     .page-hero__eyebrow::before {
@@ -42,7 +47,7 @@
       display: block;
       width: 24px;
       height: 2px;
-      background: var(--orange);
+      background: var(--teal);
       border-radius: 2px;
     }
     .page-hero__title {
@@ -52,7 +57,7 @@
       color: var(--white);
       margin-bottom: .9rem;
     }
-    .page-hero__title span { color: var(--orange); }
+    .page-hero__title span { color: var(--teal); }
     .page-hero__sub {
       font-size: 1rem;
       color: rgba(255,255,255,.68);
@@ -87,14 +92,14 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 3px;
-      background: linear-gradient(90deg, var(--orange), var(--orange-light));
+      background: linear-gradient(90deg, var(--teal), var(--teal-light));
       transform: scaleX(0);
       transform-origin: left;
       transition: transform var(--tr);
     }
 
     .product-card:hover {
-      border-color: rgba(232,119,34,.35);
+      border-color: rgba(61,191,172,.35);
       box-shadow: var(--shadow-md);
       transform: translateY(-4px);
     }
@@ -104,18 +109,18 @@
       font-size: .72rem;
       font-weight: 700;
       letter-spacing: .1em;
-      color: var(--orange);
+      color: var(--teal);
       text-transform: uppercase;
     }
 
     .product-card__icon {
       width: 44px;
       height: 44px;
-      background: rgba(232,119,34,.1);
+      background: rgba(61,191,172,.1);
       border-radius: 10px;
       display: grid;
       place-items: center;
-      color: var(--orange);
+      color: var(--teal);
       flex-shrink: 0;
     }
     .product-card__icon svg { width: 22px; height: 22px; }
@@ -141,7 +146,7 @@
       gap: .35rem;
       font-size: .8rem;
       font-weight: 700;
-      color: var(--orange);
+      color: var(--teal);
       text-decoration: none;
       margin-top: .25rem;
       transition: gap var(--tr);
@@ -188,15 +193,7 @@
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container">
       <a href="index.html" class="nav__brand" aria-label="Kaveri Hydraulics home">
-        <svg class="nav__brand-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="4"  y="46" width="56" height="10" rx="5" fill="currentColor" opacity=".3"/>
-          <rect x="8"  y="48" width="48" height="6"  rx="3" fill="currentColor" opacity=".5"/>
-          <rect x="10" y="32" width="34" height="16" rx="3" fill="currentColor" opacity=".7"/>
-          <rect x="28" y="22" width="18" height="14" rx="2.5" fill="currentColor"/>
-          <line x1="14" y1="38" x2="38" y2="16" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
-          <line x1="38" y1="16" x2="52" y2="26" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M52 26 L58 32 L54 38 L48 34 Z" fill="currentColor"/>
-        </svg>
+        <img src="images/logo.png" alt="Kaveri Hydraulics logo" class="nav__brand-icon" style="height:50px;width:auto;object-fit:contain" />
         <div class="nav__brand-text">
           <span class="nav__brand-name">Kaveri Hydraulics</span>
           <span class="nav__brand-tagline">Est. 1993 &middot; Bangalore</span>
@@ -239,7 +236,7 @@
 
         <!-- 1 -->
         <div class="product-card">
-          <img class="product-card__img" src="images/product%201/leakolock-seal-kit-001.webp" alt="Hydraulic Cylinder Seal Kit" loading="lazy" />
+          <img class="product-card__img" src="images/processed/1 cylinder seal kits/DSC01266.webp" alt="Hydraulic cylinder seal kits" alt="Hydraulic Cylinder Seal Kit" loading="lazy" />
           <div class="product-card__num">01</div>
           <div class="product-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -251,7 +248,7 @@
 
         <!-- 2 -->
         <div class="product-card">
-          <img class="product-card__img" src="images/product%2002/oring-pump-parts-01.webp" alt="Hydraulic O-Ring Kit" loading="lazy" />
+          <img class="product-card__img" src="images/processed/orings kits/DSC01344.webp" alt="Hydraulic O-ring kit" alt="Hydraulic O-Ring Kit" loading="lazy" />
           <div class="product-card__num">02</div>
           <div class="product-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
@@ -263,6 +260,7 @@
 
         <!-- 3 -->
         <div class="product-card">
+          <img class="product-card__img" src="images/processed/orings and oil seals/DSC01376.webp" alt="O-rings and dust seals" loading="lazy" />
           <div class="product-card__num">03</div>
           <div class="product-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
@@ -274,6 +272,7 @@
 
         <!-- 4 -->
         <div class="product-card">
+          <img class="product-card__img" src="images/processed/seal groups/DSC01562.webp" alt="Seal groups" loading="lazy" />
           <div class="product-card__num">04</div>
           <div class="product-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
@@ -296,7 +295,7 @@
 
         <!-- 6 -->
         <div class="product-card">
-          <img class="product-card__img" src="images/product%2002/oring-pump-parts-13.webp" alt="Hydraulic Pump & Motor Parts" loading="lazy" />
+          <img class="product-card__img" src="images/processed/pump parts/DSC01455.webp" alt="Hydraulic pump and motor parts" alt="Hydraulic Pump & Motor Parts" loading="lazy" />
           <div class="product-card__num">06</div>
           <div class="product-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
@@ -308,6 +307,7 @@
 
         <!-- 7 -->
         <div class="product-card">
+          <img class="product-card__img" src="images/processed/cables and levers/cable2.webp" alt="Control cables and lever assemblies" loading="lazy" />
           <div class="product-card__num">07</div>
           <div class="product-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
@@ -330,6 +330,7 @@
 
         <!-- 9 -->
         <div class="product-card">
+          <img class="product-card__img" src="images/processed/filters/DSC01514.webp" alt="Hydraulic and oil filters" loading="lazy" />
           <div class="product-card__num">09</div>
           <div class="product-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -352,7 +353,7 @@
 
         <!-- 11 -->
         <div class="product-card">
-          <img class="product-card__img" src="images/Product%2004/bushes-plates-01.webp" alt="Bi-Metal Bushes" loading="lazy" />
+          <img class="product-card__img" src="images/processed/b m bush/DSC01410.webp" alt="Bi-metal bushes" alt="Bi-Metal Bushes" loading="lazy" />
           <div class="product-card__num">11</div>
           <div class="product-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="8" cy="12" r="2"/><circle cx="16" cy="12" r="2"/></svg>
@@ -364,7 +365,7 @@
 
         <!-- 12 -->
         <div class="product-card">
-          <img class="product-card__img" src="images/product%2003/coupling-parts-01.webp" alt="Engine Coupling" loading="lazy" />
+          <img class="product-card__img" src="images/processed/engine couplings/DSC01389.webp" alt="Engine couplings" alt="Engine Coupling" loading="lazy" />
           <div class="product-card__num">12</div>
           <div class="product-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
@@ -376,7 +377,7 @@
 
         <!-- 13 -->
         <div class="product-card">
-          <img class="product-card__img" src="images/Product%2004/bushes-plates-09.webp" alt="Clutch Plates" loading="lazy" />
+          <img class="product-card__img" src="images/processed/friction plates/DSC01431.webp" alt="Clutch plates and friction discs" alt="Clutch Plates" loading="lazy" />
           <div class="product-card__num">13</div>
           <div class="product-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
@@ -399,6 +400,7 @@
 
         <!-- 15 -->
         <div class="product-card">
+          <img class="product-card__img" src="images/processed/grease adaptors/IMG_5518.webp" alt="Grease adaptors and nipples" loading="lazy" />
           <div class="product-card__num">15</div>
           <div class="product-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22V12m0 0V2m0 10l-4-4m4 4l4-4"/></svg>
@@ -421,6 +423,7 @@
 
         <!-- 17 -->
         <div class="product-card">
+          <img class="product-card__img" src="images/processed/pusher assy/full764.webp" alt="Pusher assemblies" loading="lazy" />
           <div class="product-card__num">17</div>
           <div class="product-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
@@ -541,10 +544,10 @@
       <p class="section__sub">Browse our full range of stocked products — click any image to enlarge.</p>
 
       <div class="tab-gallery__tabs" role="tablist" style="margin-top:2rem">
-        <button class="tab-btn active" role="tab" aria-selected="true"  data-tab="seal-kits">Seal Kits <span style="font-weight:400;font-size:.78rem;opacity:.65">(139)</span></button>
-        <button class="tab-btn"        role="tab" aria-selected="false" data-tab="oring-pump">O-Ring &amp; Pump Parts <span style="font-weight:400;font-size:.78rem;opacity:.65">(31)</span></button>
-        <button class="tab-btn"        role="tab" aria-selected="false" data-tab="couplings">Couplings &amp; Parts <span style="font-weight:400;font-size:.78rem;opacity:.65">(72)</span></button>
-        <button class="tab-btn"        role="tab" aria-selected="false" data-tab="bushes">Bushes &amp; Plates <span style="font-weight:400;font-size:.78rem;opacity:.65">(63)</span></button>
+        <button class="tab-btn active" role="tab" aria-selected="true"  data-tab="seal-kits">Seal Kits <span style="font-weight:400;font-size:.78rem;opacity:.65">(59)</span></button>
+        <button class="tab-btn"        role="tab" aria-selected="false" data-tab="oring-pump">O-Ring &amp; Pump Parts <span style="font-weight:400;font-size:.78rem;opacity:.65">(25)</span></button>
+        <button class="tab-btn"        role="tab" aria-selected="false" data-tab="couplings">Couplings &amp; Parts <span style="font-weight:400;font-size:.78rem;opacity:.65">(30)</span></button>
+        <button class="tab-btn"        role="tab" aria-selected="false" data-tab="bushes">Bushes &amp; Plates <span style="font-weight:400;font-size:.78rem;opacity:.65">(42)</span></button>
       </div>
 
       <div id="tab-seal-kits"  class="tab-panel active" role="tabpanel"><div class="gallery-grid" id="grid-seal-kits"></div></div>
@@ -570,15 +573,7 @@
       <div class="footer__grid">
         <div class="footer__about">
           <a href="index.html" class="footer__brand" aria-label="Kaveri Hydraulics home">
-            <svg class="footer__brand-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="4"  y="46" width="56" height="10" rx="5" fill="currentColor" opacity=".3"/>
-              <rect x="8"  y="48" width="48" height="6"  rx="3" fill="currentColor" opacity=".5"/>
-              <rect x="10" y="32" width="34" height="16" rx="3" fill="currentColor" opacity=".7"/>
-              <rect x="28" y="22" width="18" height="14" rx="2.5" fill="currentColor"/>
-              <line x1="14" y1="38" x2="38" y2="16" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
-              <line x1="38" y1="16" x2="52" y2="26" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
-              <path d="M52 26 L58 32 L54 38 L48 34 Z" fill="currentColor"/>
-            </svg>
+            <img src="images/logo.png" alt="Kaveri Hydraulics logo" class="footer__brand-icon" style="height:40px;width:auto;object-fit:contain" />
             <span class="footer__brand-name">Kaveri Hydraulics</span>
           </a>
           <p>Bangalore's trusted partner for excavator hydraulic spare parts since 1993. Quality products, expert advice, honest service.</p>
@@ -706,21 +701,68 @@
     }
 
     // Image arrays
-    const sealKitImgs = Array.from({length: 139}, (_, i) =>
-      'images/product%201/leakolock-seal-kit-' + String(i + 1).padStart(3, '0') + '.webp'
-    );
-    const oringImgs = Array.from({length: 31}, (_, i) =>
-      'images/product%2002/oring-pump-parts-' + String(i + 1).padStart(2, '0') + '.webp'
-    );
-    const couplingImgs = Array.from({length: 72}, (_, i) =>
-      'images/product%2003/coupling-parts-' + String(i + 1).padStart(2, '0') + '.webp'
-    );
-    const bushesImgs = Array.from({length: 63}, (_, i) =>
-      'images/Product%2004/bushes-plates-' + String(i + 1).padStart(2, '0') + '.webp'
-    );
-
-    // Build all grids immediately (lazy loading handles performance)
-    makeGrid('grid-seal-kits',  sealKitImgs);
+    const sealKitImgs = [
+      'images/processed/1 cylinder seal kits/DSC01266.webp',
+      'images/processed/1 cylinder seal kits/DSC01267.webp',
+      'images/processed/1 cylinder seal kits/DSC01270.webp',
+      'images/processed/1 cylinder seal kits/DSC01271.webp',
+      'images/processed/1 cylinder seal kits/DSC01273.webp',
+      'images/processed/1 cylinder seal kits/DSC01274.webp',
+      'images/processed/1 cylinder seal kits/DSC01275.webp',
+      'images/processed/1 cylinder seal kits/DSC01276.webp',
+      'images/processed/1 cylinder seal kits/DSC01278.webp',
+      'images/processed/1 cylinder seal kits/DSC01279.webp',
+      'images/processed/1 cylinder seal kits/DSC01280.webp',
+      'images/processed/1 cylinder seal kits/DSC01281.webp',
+      'images/processed/1 cylinder seal kits/DSC01282.webp',
+      'images/processed/1 cylinder seal kits/DSC01283.webp',
+      'images/processed/1 cylinder seal kits/DSC01285.webp',
+      'images/processed/1 cylinder seal kits/DSC01287.webp',
+      'images/processed/1 cylinder seal kits/DSC01288.webp',
+      'images/processed/1 cylinder seal kits/DSC01289.webp',
+      'images/processed/1 cylinder seal kits/DSC01290.webp',
+      'images/processed/1 cylinder seal kits/DSC01291.webp',
+      'images/processed/1 cylinder seal kits/DSC01292.webp',
+      'images/processed/1 cylinder seal kits/DSC01293.webp',
+      'images/processed/1 cylinder seal kits/DSC01294.webp',
+      'images/processed/1 cylinder seal kits/DSC01296.webp',
+      'images/processed/1 cylinder seal kits/DSC01297.webp',
+      'images/processed/1 cylinder seal kits/DSC01299.webp',
+      'images/processed/1 cylinder seal kits/DSC01300.webp',
+      'images/processed/1 cylinder seal kits/DSC01301.webp',
+      'images/processed/1 cylinder seal kits/DSC01302.webp',
+      'images/processed/1 cylinder seal kits/DSC01303.webp',
+      'images/processed/backhoe seal kits/DSC01579.webp',
+      'images/processed/backhoe seal kits/DSC01581.webp',
+      'images/processed/backhoe seal kits/DSC01582.webp',
+      'images/processed/backhoe seal kits/DSC01583.webp',
+      'images/processed/backhoe seal kits/DSC01584.webp',
+      'images/processed/backhoe seal kits/DSC01585.webp',
+      'images/processed/backhoe seal kits/DSC01586.webp',
+      'images/processed/backhoe seal kits/DSC01587.webp',
+      'images/processed/backhoe seal kits/DSC01588.webp',
+      'images/processed/backhoe seal kits/DSC01589.webp',
+      'images/processed/backhoe seal kits/DSC01590.webp',
+      'images/processed/c j kits/DSC01355.webp',
+      'images/processed/c j kits/DSC01356.webp',
+      'images/processed/c j kits/DSC01357.webp',
+      'images/processed/c j kits/DSC01358.webp',
+      'images/processed/c j kits/DSC01359.webp',
+      'images/processed/orings kits/DSC01344.webp',
+      'images/processed/orings kits/DSC01345.webp',
+      'images/processed/orings kits/DSC01346.webp',
+      'images/processed/orings kits/DSC01347.webp',
+      'images/processed/orings kits/DSC01348.webp',
+      'images/processed/orings kits/DSC01350.webp',
+      'images/processed/orings kits/DSC01351.webp',
+      'images/processed/orings kits/DSC01353.webp',
+      'images/processed/orings kits/DSC01360.webp',
+      'images/processed/orings kits/DSC01361.webp',
+      'images/processed/orings kits/DSC01362.webp',
+      'images/processed/orings kits/DSC01363.webp',
+      'images/processed/t t kits/DSC01354.webp'
+    ];
+    makeGrid('grid-seal-kits', sealKitImgs);
     makeGrid('grid-oring-pump', oringImgs);
     makeGrid('grid-couplings',  couplingImgs);
     makeGrid('grid-bushes',     bushesImgs);

@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Kaveri Hydraulics</title>
-  <meta name="description" content="Get in touch with Kaveri Hydraulics in Bangalore for excavator spare parts enquiries." />
+  <title>Contact | Kaveri Hydraulics — Bangalore Excavator Parts</title>
+  <meta name="description" content="Contact Kaveri Hydraulics at No 163-166 A, Auto Towers, 3rd Floor, JC Road, Bangalore 560002. Authorised dealer for excavator hydraulic spare parts. Call or WhatsApp us for pricing and availability." />
+    <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kaveri Hydraulics" />
+  <meta property="og:title" content="Contact | Kaveri Hydraulics — Bangalore Excavator Parts" />
+  <meta property="og:description" content="Contact Kaveri Hydraulics at No 163-166 A, Auto Towers, 3rd Floor, JC Road, Bangalore 560002. Authorised dealer for excavator hydraulic spare parts. Call or WhatsApp us for pricing and availability." />
+  <meta property="og:image" content="images/logo.png" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* ── Contact page styles ── */
     .page-hero {
       background: var(--navy);
       background-image:
-        radial-gradient(ellipse 70% 50% at 70% -10%, rgba(232,119,34,.18) 0%, transparent 65%);
+        radial-gradient(ellipse 70% 50% at 70% -10%, rgba(61,191,172,.18) 0%, transparent 65%);
       color: var(--white);
       padding: 64px 0 56px;
       position: relative;
@@ -34,7 +39,7 @@
       font-weight: 700;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: var(--orange-light);
+      color: var(--teal-light);
       margin-bottom: .9rem;
     }
     .page-hero__eyebrow::before {
@@ -42,7 +47,7 @@
       display: block;
       width: 24px;
       height: 2px;
-      background: var(--orange);
+      background: var(--teal);
       border-radius: 2px;
     }
     .page-hero__title {
@@ -52,7 +57,7 @@
       color: var(--white);
       margin-bottom: .9rem;
     }
-    .page-hero__title span { color: var(--orange); }
+    .page-hero__title span { color: var(--teal); }
     .page-hero__sub {
       font-size: 1rem;
       color: rgba(255,255,255,.68);
@@ -102,11 +107,11 @@
     .contact__detail-icon {
       width: 42px;
       height: 42px;
-      background: rgba(232,119,34,.15);
+      background: rgba(61,191,172,.15);
       border-radius: 10px;
       display: grid;
       place-items: center;
-      color: var(--orange);
+      color: var(--teal);
       flex-shrink: 0;
     }
     .contact__detail-icon svg { width: 20px; height: 20px; }
@@ -126,7 +131,7 @@
       color: var(--white);
       line-height: 1.45;
     }
-    .contact__detail-body a:hover { color: var(--orange-light); }
+    .contact__detail-body a:hover { color: var(--teal-light); }
 
     .contact__divider {
       border: none;
@@ -212,9 +217,9 @@
 
     .form-group input:focus,
     .form-group textarea:focus {
-      border-color: var(--orange);
+      border-color: var(--teal);
       background: var(--white);
-      box-shadow: 0 0 0 3px rgba(232,119,34,.12);
+      box-shadow: 0 0 0 3px rgba(61,191,172,.12);
     }
 
     .form-group textarea { resize: vertical; min-height: 130px; }
@@ -225,7 +230,7 @@
     .form__submit {
       width: 100%;
       padding: .9rem;
-      background: var(--orange);
+      background: var(--teal);
       color: var(--white);
       border: none;
       border-radius: 7px;
@@ -237,9 +242,9 @@
       margin-top: .5rem;
     }
     .form__submit:hover {
-      background: var(--orange-dark);
+      background: var(--teal-dark);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(232,119,34,.35);
+      box-shadow: 0 6px 20px rgba(61,191,172,.35);
     }
 
     .form__success {
@@ -283,15 +288,7 @@
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container">
       <a href="index.html" class="nav__brand" aria-label="Kaveri Hydraulics home">
-        <svg class="nav__brand-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="4"  y="46" width="56" height="10" rx="5" fill="currentColor" opacity=".3"/>
-          <rect x="8"  y="48" width="48" height="6"  rx="3" fill="currentColor" opacity=".5"/>
-          <rect x="10" y="32" width="34" height="16" rx="3" fill="currentColor" opacity=".7"/>
-          <rect x="28" y="22" width="18" height="14" rx="2.5" fill="currentColor"/>
-          <line x1="14" y1="38" x2="38" y2="16" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
-          <line x1="38" y1="16" x2="52" y2="26" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M52 26 L58 32 L54 38 L48 34 Z" fill="currentColor"/>
-        </svg>
+        <img src="images/logo.png" alt="Kaveri Hydraulics logo" class="nav__brand-icon" style="height:50px;width:auto;object-fit:contain" />
         <div class="nav__brand-text">
           <span class="nav__brand-name">Kaveri Hydraulics</span>
           <span class="nav__brand-tagline">Est. 1993 &middot; Bangalore</span>
@@ -393,15 +390,15 @@
           <p>Fill in the form below and we'll get back to you as soon as possible.</p>
           <form id="contactForm" novalidate>
             <div class="form-group">
-              <label for="name">Your Name <span style="color:var(--orange)">*</span></label>
+              <label for="name">Your Name <span style="color:var(--teal)">*</span></label>
               <input type="text" id="name" name="name" placeholder="e.g. Ramesh Kumar" required autocomplete="name" />
             </div>
             <div class="form-group">
-              <label for="phone">Phone Number <span style="color:var(--orange)">*</span></label>
+              <label for="phone">Phone Number <span style="color:var(--teal)">*</span></label>
               <input type="tel" id="phone" name="phone" placeholder="e.g. +91 98765 43210" required autocomplete="tel" />
             </div>
             <div class="form-group">
-              <label for="message">Message <span style="color:var(--orange)">*</span></label>
+              <label for="message">Message <span style="color:var(--teal)">*</span></label>
               <textarea id="message" name="message" placeholder="Describe the part or equipment you need help with…" required></textarea>
             </div>
             <button type="submit" class="form__submit">Send Message</button>
@@ -440,15 +437,7 @@
       <div class="footer__grid">
         <div class="footer__about">
           <a href="index.html" class="footer__brand" aria-label="Kaveri Hydraulics home">
-            <svg class="footer__brand-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="4"  y="46" width="56" height="10" rx="5" fill="currentColor" opacity=".3"/>
-              <rect x="8"  y="48" width="48" height="6"  rx="3" fill="currentColor" opacity=".5"/>
-              <rect x="10" y="32" width="34" height="16" rx="3" fill="currentColor" opacity=".7"/>
-              <rect x="28" y="22" width="18" height="14" rx="2.5" fill="currentColor"/>
-              <line x1="14" y1="38" x2="38" y2="16" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
-              <line x1="38" y1="16" x2="52" y2="26" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
-              <path d="M52 26 L58 32 L54 38 L48 34 Z" fill="currentColor"/>
-            </svg>
+            <img src="images/logo.png" alt="Kaveri Hydraulics logo" class="footer__brand-icon" style="height:40px;width:auto;object-fit:contain" />
             <span class="footer__brand-name">Kaveri Hydraulics</span>
           </a>
           <p>Bangalore's trusted partner for excavator hydraulic spare parts since 1993. Quality products, expert advice, honest service.</p>
