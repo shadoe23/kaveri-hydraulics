@@ -121,8 +121,8 @@ ul  { list-style: none; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--navy);
-  box-shadow: 0 2px 18px rgba(0,0,0,.35);
+  background: var(--teal);
+  box-shadow: 0 2px 18px rgba(0,0,0,.25);
   height: 68px;
   display: flex;
   align-items: center;
@@ -145,10 +145,7 @@ ul  { list-style: none; }
 }
 
 .nav__brand-icon {
-  height: 50px;
-  width: auto;
-  flex-shrink: 0;
-  object-fit: contain;
+  display: none;
 }
 
 .nav__brand-text {
@@ -158,16 +155,18 @@ ul  { list-style: none; }
 }
 
 .nav__brand-name {
-  font-size: 1.08rem;
+  font-size: 1.12rem;
   font-weight: 800;
-  color: var(--white);
-  letter-spacing: .015em;
+  font-style: italic;
+  color: var(--navy);
+  letter-spacing: .06em;
+  text-transform: uppercase;
 }
 
 .nav__brand-tagline {
   font-size: .62rem;
   font-weight: 500;
-  color: var(--teal-light);
+  color: rgba(26,35,50,.65);
   letter-spacing: .09em;
   text-transform: uppercase;
 }
@@ -184,7 +183,7 @@ ul  { list-style: none; }
   border-radius: 5px;
   font-size: .92rem;
   font-weight: 600;
-  color: rgba(255,255,255,.78);
+  color: rgba(26,35,50,.72);
   transition: color var(--tr), background var(--tr);
   position: relative;
 }
@@ -196,7 +195,7 @@ ul  { list-style: none; }
   left: 1rem;
   right: 1rem;
   height: 2px;
-  background: var(--teal);
+  background: var(--navy);
   border-radius: 2px;
   transform: scaleX(0);
   transform-origin: left;
@@ -205,7 +204,7 @@ ul  { list-style: none; }
 
 .nav__links a:hover,
 .nav__links a.active {
-  color: var(--white);
+  color: var(--navy);
 }
 .nav__links a:hover::after,
 .nav__links a.active::after {
@@ -229,7 +228,7 @@ ul  { list-style: none; }
   display: block;
   width: 25px;
   height: 2px;
-  background: var(--white);
+  background: var(--navy);
   border-radius: 2px;
   transition: all var(--tr);
 }
